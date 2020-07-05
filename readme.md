@@ -29,3 +29,7 @@
 # 从csv文件中获取数据
 
 文件 https:/​/​archive.​ics.​uci.​edu/​ml/​datasets/​iris
+
+该CSV文件包括四个花朵测量值的浮动列和一个带有相应花朵种类的字符串列
+
+例子1： 读取文件
