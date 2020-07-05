@@ -17,14 +17,19 @@ func main() {
 	defer f.Close()
 	// Create a new CSV reader reading from the opened file.
 	reader := csv.NewReader(f)
-	reader.FieldsPerRecord = 6
+	reader.FieldsPerRecord = 5
 	var rawCSVData [][]string
 	for {
 		record, err := reader.Read()
 		if err == io.EOF {
 			break
 		}
+		// If we had a parsing error, log the error and move on.
+		if err != nil {
+			log.Println(err)
+			continue
+		}
 		rawCSVData = append(rawCSVData, record)
 	}
-	fmt.Println(rawCSVData)
+	fmt.Printf("parsed %d lines successfully\n", len(rawCSVData))
 }
