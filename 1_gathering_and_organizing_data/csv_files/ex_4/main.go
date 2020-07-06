@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Open the CSV file.
-	irisFile, err := os.Open("../data/iris_labeled.csv")
+	irisFile, err := os.Open("1_gathering_and_organizing_data/csv_files/data/iris.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
