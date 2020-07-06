@@ -28,3 +28,8 @@ Golang with guided code covering the following topics:
 - Data versioning
 
 CSV files might not be a go-to format for big data, but as a data scientist or developer working in machine learning, you are sure to encounter this format. You might need a mapping of zip codes to latitude/longitude and find this as a CSV file on the internet, or you may be given sales figures from your sales team in a CSV format. In any event, we need to understand how to parse these files. The main package that we will utilize in parsing CSV files is encoding/csv from Go's standard library. However, we will also discuss a couple of packages that allow us to quickly manipulate or transform CSV data, github.com/go-gota/gota/dataframe and go-hep.org/x/hep/csvutil.
+
+- Web scraping
+
+Web scraping is a handy tool to have in a data scientist's skill set. It can be useful in a variety of situations to gather data, such as when a website does not provide an API, or you need to parse and extract web content programmatically, such as scraping Wikipedia tables. The following packages are used to scrape data from the web: The github.com/PuerkitoBio/goquery package: A jQuery-like tool The http package: To scrape information from an HTML web page on the internet The github.com/anaskhan96/soup package: A Go package similar to the BeautifulSoup Python package
+

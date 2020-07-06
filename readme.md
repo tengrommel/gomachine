@@ -39,3 +39,14 @@
 - 例子3：处理文件中每行各个元素的数据类型是否复合预期
 - 例子4：使用go-gota解析数据
 - 例子5：使用go-gota处理数据
+
+# Web scraping
+> 网络爬取
+
+在多种情况下收集数据可能很有用，例如在网站不提供API时，或者您需要以编程方式解析和提取Web内容时（例如，抓取Wikipedia表）。
+
+- github.com/PuerkitoBio/goquery
+> 类似jquery
+- github.com/anaskhan96/soup
+> 类似BeautifulSoup(python包)
+
