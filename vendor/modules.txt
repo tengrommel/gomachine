@@ -3,13 +3,28 @@
 # github.com/anaskhan96/soup v1.1.1
 ## explicit
 github.com/anaskhan96/soup
+# github.com/boltdb/bolt v1.3.1
+## explicit
+github.com/boltdb/bolt
 # github.com/go-gota/gota v0.10.1
 ## explicit
 github.com/go-gota/gota/dataframe
 github.com/go-gota/gota/series
+# github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841
+## explicit
+# github.com/lib/pq v1.7.0
+## explicit
+github.com/lib/pq
+github.com/lib/pq/oid
+github.com/lib/pq/scram
+# github.com/patrickmn/go-cache v2.1.0+incompatible
+## explicit
+github.com/patrickmn/go-cache
 # golang.org/x/net v0.0.0-20200202094626-16171245cfb2
 golang.org/x/net/html
 golang.org/x/net/html/atom
+# golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a
+golang.org/x/sys/unix
 # gonum.org/v1/gonum v0.7.0
 ## explicit
 gonum.org/v1/gonum/blas
