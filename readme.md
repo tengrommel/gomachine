@@ -61,4 +61,9 @@
 
 使用标准库中的encoding/json解析json
 
+# SQL-like databases
+> 当然还有数据库中的数据 这里使用postgres
 
+- 例子1：检查数据库是否连接
+- 例子2：查询
+- 例子3：修改
