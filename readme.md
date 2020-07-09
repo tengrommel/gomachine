@@ -114,3 +114,23 @@
 
 # 向量
 >向量是数字的有序集合，以行（从左到右）或列（上和下）排列。向量中的每个数字称为分量。例如，这可能是代表我们公司销售的数字的集合，或者可能是代表温度的数字的集合。
+
+当然，我们使用切片来表示这些有序的数据集合，如下所示：
+
+    // Initialize a "vector" via a slice.
+    myVector := make([]float64, 0) 
+    // Add a couple of components to the vector.
+    myVector = append(myVector, 1.0)
+    myVector = append(myVector, 2.2)
+    // Output the results to stdout.
+    fmt.Println(myVector)
+    
+但是，切片并不能真正代表行或列的概念，我们仍然需要在切片之上进行各种矢量运算。
+
+    gonum.org/v1/gonum/floats
+    gonum.org/v1/gonum/mat
+ 
+- 例子1：使用slice
+- 例子2：使用gonum
+- 例子3：
+- 例子4：
