@@ -26,6 +26,8 @@ github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9 h1:7qnwS9+oeSiOIsiUMa
 github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9/go.mod h1:XA3DeT6rxh2EAE789SSiSJNqxPaC0aE9J8NTOI0Jo/A=
 github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 h1:V2IgdyerlBa/MxaEFRbV5juy/C3MGdj4ePi+g6ePIp4=
 github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9/go.mod h1:0EXg4mc1CNP0HCqCz+K4ts155PXIlUywf0wqN+GfPZw=
+github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b h1:fbskpz/cPqWH8VqkQ7LJghFkl2KPAiIFUHrTJ2O3RGk=
+github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b/go.mod h1:Z4GIJBJO3Wa4gD4vbwQxXXZ+WHmW6E9ixmNrwvs0iZs=
 github.com/jpillora/opts v0.0.0-20160806153215-0b3373f6c34d h1:54EQ5QU3FqHnYT13a6q8fO/4TLyzAHmqwI2WcS8BovU=
 github.com/jpillora/opts v0.0.0-20160806153215-0b3373f6c34d/go.mod h1:8/sC6XyMKHq/ybiU9Oqc1i0tDjFA/6otW7+Ha/qtnfo=
 github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841 h1:DSiWcaEafVv5lLmUoYgr+Q/0ZhlOFzZHHqvmkEC8vKY=

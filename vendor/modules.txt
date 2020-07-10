@@ -39,6 +39,9 @@ github.com/gonum/lapack/native
 ## explicit
 github.com/gonum/matrix
 github.com/gonum/matrix/mat64
+# github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
+## explicit
+github.com/gonum/stat
 # github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841
 ## explicit
 # github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5

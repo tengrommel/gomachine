@@ -12,6 +12,7 @@ require (
 	github.com/gonum/internal v0.0.0-20181124074243-f884aa714029 // indirect
 	github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9 // indirect
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9
+	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 	github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841 // indirect
 	github.com/lib/pq v1.7.0
 	github.com/montanaflynn/stats v0.6.3
