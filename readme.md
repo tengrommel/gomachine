@@ -215,3 +215,10 @@ A的组成部分（a11，a12等）是我们要排列到矩阵中的单个数字�
 - 准确度(Accuracy) 预测正确的百分比
 - 精确度(Precision) 阳性预测中实际阳性的比率
 - 召回率(Recall) 阳性预测中被标注为阳性的比率
+
+# Confusion matrices, AUC, and ROC
+
+- Confusion matrices 混淆矩阵
+> 混淆矩阵能够以二维形式预测各种TP、TN、FP、FN数值
+- ROC曲线
+> 使用的阀值代表用于划分不同分类的边界或者等级
