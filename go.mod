@@ -14,6 +14,7 @@ require (
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9
 	github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841 // indirect
 	github.com/lib/pq v1.7.0
+	github.com/montanaflynn/stats v0.6.3
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	gonum.org/v1/gonum v0.7.0
 	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b

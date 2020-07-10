@@ -48,6 +48,9 @@ github.com/jung-kurt/gofpdf
 github.com/lib/pq
 github.com/lib/pq/oid
 github.com/lib/pq/scram
+# github.com/montanaflynn/stats v0.6.3
+## explicit
+github.com/montanaflynn/stats
 # github.com/patrickmn/go-cache v2.1.0+incompatible
 ## explicit
 github.com/patrickmn/go-cache
