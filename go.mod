@@ -17,6 +17,7 @@ require (
 	github.com/lib/pq v1.7.0
 	github.com/montanaflynn/stats v0.6.3
 	github.com/patrickmn/go-cache v2.1.0+incompatible
+	github.com/sajari/regression v1.0.1
 	gonum.org/v1/gonum v0.7.0
 	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b
 )

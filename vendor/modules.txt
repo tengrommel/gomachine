@@ -57,6 +57,9 @@ github.com/montanaflynn/stats
 # github.com/patrickmn/go-cache v2.1.0+incompatible
 ## explicit
 github.com/patrickmn/go-cache
+# github.com/sajari/regression v1.0.1
+## explicit
+github.com/sajari/regression
 # golang.org/x/image v0.0.0-20180708004352-c73c2afc3b81
 golang.org/x/image/draw
 golang.org/x/image/font
@@ -77,6 +80,7 @@ gonum.org/v1/gonum/blas/blas64
 gonum.org/v1/gonum/blas/cblas128
 gonum.org/v1/gonum/blas/gonum
 gonum.org/v1/gonum/floats
+gonum.org/v1/gonum/integrate
 gonum.org/v1/gonum/internal/asm/c128
 gonum.org/v1/gonum/internal/asm/c64
 gonum.org/v1/gonum/internal/asm/f32
