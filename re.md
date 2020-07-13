@@ -5,5 +5,4 @@
     
 # 查看显卡驱动
     nvidia-detector
-
-# 
+    nvidia-smi
