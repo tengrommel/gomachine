@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"gomachine/code/ch1/ArrayList"
-)
-
 func main() {
 	//list := ArrayList.NewArrayList()
 	//list.Append(1)
@@ -51,13 +46,13 @@ func main() {
 	//fmt.Println(myStack.Pop())
 	//fmt.Println(myStack.Pop())
 	//fmt.Println(myStack.Pop())
-	myStack := ArrayList.NewArrayListStack()
-	myStack.Push(1)
-	myStack.Push(2)
-	myStack.Push(3)
-	myStack.Push(4)
-	fmt.Println(myStack.Pop())
-	fmt.Println(myStack.Pop())
-	fmt.Println(myStack.Pop())
-	fmt.Println(myStack.Pop())
+	//myStack := ArrayList.NewArrayListStack()
+	//myStack.Push(1)
+	//myStack.Push(2)
+	//myStack.Push(3)
+	//myStack.Push(4)
+	//fmt.Println(myStack.Pop())
+	//fmt.Println(myStack.Pop())
+	//fmt.Println(myStack.Pop())
+	//fmt.Println(myStack.Pop())
 }
