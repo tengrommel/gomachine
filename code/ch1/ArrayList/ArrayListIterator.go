@@ -3,10 +3,10 @@ package ArrayList
 import "errors"
 
 type Iterator interface {
-	HasNext() bool              // 是否有下一个
-	Next() (interface{}, error) // 下一个
-	Remove()                    // 删除
-	GetIndex() int              // 得到索引
+	HasNext() bool                    // 是否有下一个
+	Next(string) (interface{}, error) // 下一个
+	Remove()                          // 删除
+	GetIndex() int                    // 得到索引
 }
 
 type Iterable interface {
@@ -23,13 +23,17 @@ func (it *ArrayListIterator) HasNext() bool {
 	return it.currentIndex < it.list.TheSize // 是否有下一个
 }
 
-func (it *ArrayListIterator) Next() (interface{}, error) {
-	if !it.HasNext() {
-		return nil, errors.New("没有下一个")
+func (it *ArrayListIterator) Next(password string) (interface{}, error) {
+	if password == "111111" {
+		if !it.HasNext() {
+			return nil, errors.New("没有下一个")
+		}
+		value, err := it.list.Get(it.currentIndex)
+		it.currentIndex++
+		return value, err
+	} else {
+		return nil, nil
 	}
-	value, err := it.list.Get(it.currentIndex)
-	it.currentIndex++
-	return value, err
 }
 
 func (it *ArrayListIterator) Remove() {
