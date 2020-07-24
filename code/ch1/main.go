@@ -1,58 +1,40 @@
 package main
 
-func main() {
-	//list := ArrayList.NewArrayList()
-	//list.Append(1)
-	//list.Append(2)
-	//list.Append(3)
-	//fmt.Println(list)
-	//list := ArrayList.NewArrayList()
-	//list.Append("a1")
-	//list.Append("b2")
-	//list.Append("c3")
-	//fmt.Println(list.TheSize) // 小写是私有只能内部使用，大写公有
+import (
+	"fmt"
+	"gomachine/code/ch1/StackArray"
+)
 
-	//list := ArrayList.NewArrayList()
-	//list.Append("a1")
-	//list.Append("b2")
-	//list.Append("c3")
-	//for i:=0;i<10;i++ {
-	//	list.Insert(1, "x5")
-	//	fmt.Println(list) // 小写是私有只能内部使用，大写公有
-	//}
-	//fmt.Println("delete")
-	//list.Delete(5)
-	//fmt.Println(list)
-	//list := ArrayList.NewArrayList()
-	//list.Append("a1")
-	//list.Append("b2")
-	//list.Append("c3")
-	//list.Append("d3")
-	//list.Append("f3")
-	//for it := list.Iterator(); it.HasNext(); {
-	//	item, _ := it.Next("111111")
-	//	if item == "d3" {
-	//		it.Remove()
-	//	}
-	//	fmt.Println(item)
-	//}
-	//fmt.Println(list)
-	//myStack := StackArray.NewStack()
-	//myStack.Push(1)
-	//myStack.Push(2)
-	//myStack.Push(3)
-	//myStack.Push(4)
-	//fmt.Println(myStack.Pop())
-	//fmt.Println(myStack.Pop())
-	//fmt.Println(myStack.Pop())
-	//fmt.Println(myStack.Pop())
-	//myStack := ArrayList.NewArrayListStack()
-	//myStack.Push(1)
-	//myStack.Push(2)
-	//myStack.Push(3)
-	//myStack.Push(4)
-	//fmt.Println(myStack.Pop())
-	//fmt.Println(myStack.Pop())
-	//fmt.Println(myStack.Pop())
-	//fmt.Println(myStack.Pop())
+func Add(num int) int {
+	if num == 0 {
+		return 0
+	} else {
+		return num + Add(num-1)
+	}
+}
+
+func main() {
+	//fmt.Println(Add(5))
+	myStack := StackArray.NewStack()
+	myStack.Push(7)
+	last := 0 // 保存
+	for !myStack.IsEmpty() {
+		data := myStack.Pop()
+		if data == 1 || data == 2 {
+			last += 1
+		} else {
+			myStack.Push(data.(int) - 1)
+			myStack.Push(data.(int) - 2)
+		}
+	}
+	fmt.Println(last)
+	fmt.Println(FAB(5))
+}
+
+func FAB(num int) int {
+	if num == 1 || num == 2 {
+		return 1
+	} else {
+		return FAB(num-1) + FAB(num-2)
+	}
 }
