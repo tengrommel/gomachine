@@ -61,7 +61,7 @@ func (s *Stack) IsEmpty() bool { // 判断是否为空
 func NewStack() *Stack {
 	myStack := new(Stack)
 	myStack.dataSource = make([]interface{}, 0, 10)
-	myStack.capsize = 10
+	myStack.capsize = 1000
 	myStack.currentSize = 0
 	return myStack
 }
