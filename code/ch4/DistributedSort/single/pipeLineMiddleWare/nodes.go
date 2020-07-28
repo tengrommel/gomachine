@@ -53,6 +53,7 @@ func Merge(in1, in2 <-chan int) <-chan int {
 				v2, ok2 = <-in2
 			}
 		}
+		close(out)
 	}()
 	return out
 }
