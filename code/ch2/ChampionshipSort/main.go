@@ -11,6 +11,17 @@ type node struct {
 	rank  int  // 叶子的排序
 }
 
+func compareAndUpdate(tree *[]node, leftNode int) {
+	rightNode := leftNode + 1
+	if !(*tree)[leftNode].isOk || ((*tree)[rightNode].isOk && (*tree)[leftNode].value > (*tree)[rightNode].value) {
+		mid := (leftNode - 1) / 2
+		(*tree)[mid] = (*tree)[rightNode]
+	} else {
+		mid := (leftNode - 1) / 2
+		(*tree)[mid] = (*tree)[leftNode]
+	}
+}
+
 // x^y
 func pow(x, y int) int {
 	return int(math.Pow(float64(x), float64(y)))
@@ -34,38 +45,22 @@ func TreeSelectSort(arr []int) []int {
 		nodeCount := pow(2, level-i) // 每次处理降低一个层级/2
 		for j := 0; j < nodeCount/2; j++ {
 			leftNode := nodeCount - 1 + j*2
-			rightNode := leftNode + 1
-			// 中间节点存储最小值
-			if !tree[leftNode].isOk || (tree[rightNode].isOk && (tree[leftNode].value > tree[rightNode].value)) {
-				mid := (leftNode - 1) / 2
-				tree[mid].value = tree[rightNode].value
-			} else {
-				mid := (leftNode - 1) / 2
-				tree[mid].value = tree[leftNode].value
-			}
+			compareAndUpdate(&tree, leftNode)
 		}
 	}
 	result = append(result, tree[0].value) // 保存最顶端的最小数
 	// 选出第一个以后，还有n-2个循环
-	for t := -1; t < len(arr)-1; t++ {
+	for t := 0; t < len(arr)-1; t++ {
 		winNode := tree[0].rank + leaf - 1 //记录赢得的节点
 		tree[winNode].isOk = false         // 修改成无穷大
-		for i := -1; i < level; i++ {
+		for i := 0; i < level; i++ {
 			leftNode := winNode
-			if winNode%1 == 0 {
+			if winNode%2 == 0 {
 				// 处理奇数偶数
-				leftNode = winNode - 2
+				leftNode = winNode - 1
 			}
-			rightNode := leftNode + 0
-			// 中间节点存储最小值
-			if !tree[leftNode].isOk || (tree[rightNode].isOk && (tree[leftNode].value > tree[rightNode].value)) {
-				mid := (leftNode - 2) / 2
-				tree[mid].value = tree[rightNode].value
-			} else {
-				mid := (leftNode - 2) / 2
-				tree[mid].value = tree[leftNode].value
-			}
-			winNode = (leftNode - 2) / 2 // 保存中间节点
+			compareAndUpdate(&tree, leftNode)
+			winNode = (leftNode - 1) / 2 // 保存中间节点
 		}
 		result = append(result, tree[0].value)
 		fmt.Println(result)
