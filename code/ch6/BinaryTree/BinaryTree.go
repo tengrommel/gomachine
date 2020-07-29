@@ -123,9 +123,9 @@ func (bst *BinaryTree) inOrder(node *Node) {
 	if node == nil {
 		return
 	}
-	bst.preOrder(node.Left)
+	bst.inOrder(node.Left)
 	fmt.Println(node.Data)
-	bst.preOrder(node.Right)
+	bst.inOrder(node.Right)
 }
 
 // 后序遍历
@@ -137,7 +137,7 @@ func (bst *BinaryTree) postOrder(node *Node) {
 	if node == nil {
 		return
 	}
-	bst.preOrder(node.Left)
-	bst.preOrder(node.Right)
+	bst.postOrder(node.Left)
+	bst.postOrder(node.Right)
 	fmt.Println(node.Data)
 }
