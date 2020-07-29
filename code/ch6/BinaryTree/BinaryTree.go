@@ -171,3 +171,37 @@ func (bst *BinaryTree) GenerateBSTDepthString(depth int) string {
 	}
 	return buffer.String()
 }
+
+func (bst *BinaryTree) RemoveMin() int {
+	ret := bst.FindMax()
+	bst.Root = bst.removeMin(bst.Root)
+	return ret
+}
+
+func (bst *BinaryTree) removeMin(node *Node) *Node {
+	if node.Left == nil {
+		// 删除
+		rightNode := node.Right // 备份右边的节点
+		bst.Size--              // 删除
+		return rightNode
+	}
+	node.Left = bst.removeMin(node.Left)
+	return node
+}
+
+func (bst *BinaryTree) RemoveMax() int {
+	ret := bst.FindMax()
+	bst.Root = bst.removeMax(bst.Root)
+	return ret
+}
+
+func (bst *BinaryTree) removeMax(node *Node) *Node {
+	if node.Right == nil {
+		// 删除
+		leftNode := node.Left // 备份右边的节点
+		bst.Size--            // 删除
+		return leftNode
+	}
+	node.Left = bst.removeMax(node.Left)
+	return node
+}
