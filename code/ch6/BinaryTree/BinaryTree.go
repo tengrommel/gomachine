@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Node struct {
 	Data  int   // 数据
 	Left  *Node // 指向左边节点
@@ -96,4 +98,46 @@ func (bst *BinaryTree) findMin(node *Node) *Node {
 	} else {
 		return bst.findMin(node.Left)
 	}
+}
+
+// 前序遍历
+func (bst *BinaryTree) PreOrder() {
+	bst.preOrder(bst.Root)
+}
+
+func (bst *BinaryTree) preOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	fmt.Println(node.Data)
+	bst.preOrder(node.Left)
+	bst.preOrder(node.Right)
+}
+
+// 中序遍历
+func (bst *BinaryTree) InOrder() {
+	bst.inOrder(bst.Root)
+}
+
+func (bst *BinaryTree) inOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	bst.preOrder(node.Left)
+	fmt.Println(node.Data)
+	bst.preOrder(node.Right)
+}
+
+// 后序遍历
+func (bst *BinaryTree) PostOrder() {
+	bst.postOrder(bst.Root)
+}
+
+func (bst *BinaryTree) postOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	bst.preOrder(node.Left)
+	bst.preOrder(node.Right)
+	fmt.Println(node.Data)
 }
