@@ -29,5 +29,5 @@ func main() {
 	bst.PreOrder()
 	fmt.Println(" post --------------------------")
 	bst.PostOrder()
-
+	fmt.Println(bst.String())
 }

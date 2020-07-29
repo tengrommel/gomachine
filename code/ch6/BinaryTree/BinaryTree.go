@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bytes"
+	"fmt"
+	"strconv"
+)
 
 type Node struct {
 	Data  int   // 数据
@@ -140,4 +144,30 @@ func (bst *BinaryTree) postOrder(node *Node) {
 	bst.postOrder(node.Left)
 	bst.postOrder(node.Right)
 	fmt.Println(node.Data)
+}
+
+// 二叉树打印
+func (bst *BinaryTree) String() string {
+	var buffer bytes.Buffer                     // 保存字符串
+	bst.GenerateBSTString(bst.Root, 0, &buffer) // 调用函数实现遍历
+	return buffer.String()
+}
+
+func (bst *BinaryTree) GenerateBSTString(node *Node, depth int, buffer *bytes.Buffer) {
+	if node == nil {
+		buffer.WriteString(bst.GenerateBSTDepthString(depth) + "nil\n") // 空节点
+		return
+	}
+	// 写入字符串，保存树的深度
+	bst.GenerateBSTString(node.Left, depth+1, buffer)
+	buffer.WriteString(bst.GenerateBSTDepthString(depth) + strconv.Itoa(node.Data) + "\n")
+	bst.GenerateBSTString(node.Right, depth+1, buffer)
+}
+
+func (bst *BinaryTree) GenerateBSTDepthString(depth int) string {
+	var buffer bytes.Buffer
+	for i := 0; i < depth; i++ {
+		buffer.WriteString("--") // 深度为0， 1--， 2--
+	}
+	return buffer.String()
 }
