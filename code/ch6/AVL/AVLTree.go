@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // 适用于没有删除的情况
 // 红黑树的增删查改是最优的
@@ -96,6 +99,25 @@ func (avlNode *AVLNode) adjust() *AVLNode {
 			avlNode = avlNode.LeftThenRightRotate()
 		}
 	}
+	return avlNode
+}
+
+func (avlNode *AVLNode) Insert(value interface{}) *AVLNode {
+	if avlNode == nil {
+		newNode := &AVLNode{value, nil, nil, 0}
+		return newNode
+	}
+	switch compare(value, avlNode.Data) {
+	case -1:
+		avlNode.Left = avlNode.Left.Insert(value)
+		avlNode = avlNode.adjust() // 自动平衡
+	case 1:
+		avlNode.Right = avlNode.Right.Insert(value)
+		avlNode = avlNode.adjust()
+	case 0:
+		fmt.Println("数据已经存在")
+	}
+	avlNode.height = Max(avlNode.Left.GetHeight(), avlNode.Right.GetHeight()) + 1
 	return avlNode
 }
 
