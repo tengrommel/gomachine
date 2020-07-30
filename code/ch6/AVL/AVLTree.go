@@ -121,6 +121,34 @@ func (avlNode *AVLNode) Insert(value interface{}) *AVLNode {
 	return avlNode
 }
 
+func (avlNode *AVLNode) Delete(value interface{}) *AVLNode {
+	if avlNode == nil {
+		return nil
+	}
+	switch compare(value, avlNode.Data) {
+	case -1:
+		avlNode.Left = avlNode.Left.Delete(value)
+	case 1:
+		avlNode.Right = avlNode.Right.Delete(value)
+	case 0:
+		// 删除在这里
+		if avlNode.Left != nil && avlNode.Right != nil { // 左右都有节点
+			avlNode.Data = avlNode.Right.FindMin()
+			avlNode.Right = avlNode.Right.Delete(avlNode.Data)
+		} else if avlNode.Left != nil { // 左孩子存在，右孩子存在或者不存在
+			avlNode = avlNode.Left
+		} else {
+			// 只有一个右孩子，或者无孩子
+			avlNode = avlNode.Right
+		}
+	}
+	if avlNode != nil {
+		avlNode.height = Max(avlNode.Left.GetHeight(), avlNode.Right.GetHeight()) + 1
+		avlNode = avlNode.adjust() // 自动平衡
+	}
+	return avlNode
+}
+
 func (avlNode *AVLNode) Find(data interface{}) *AVLNode {
 	var result *AVLNode
 	switch compare(data, avlNode.Data) {
