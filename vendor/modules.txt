@@ -5,18 +5,35 @@ github.com/ajstarks/svgo
 # github.com/anaskhan96/soup v1.1.1
 ## explicit
 github.com/anaskhan96/soup
+# github.com/awalterschulze/gographviz v0.0.0-20190221210632-1e9ccb565bca
+github.com/awalterschulze/gographviz
+github.com/awalterschulze/gographviz/ast
+github.com/awalterschulze/gographviz/internal/errors
+github.com/awalterschulze/gographviz/internal/lexer
+github.com/awalterschulze/gographviz/internal/parser
+github.com/awalterschulze/gographviz/internal/token
 # github.com/boltdb/bolt v1.3.1
 ## explicit
 github.com/boltdb/bolt
+# github.com/chewxy/hm v1.0.0
+github.com/chewxy/hm
+# github.com/chewxy/math32 v1.0.6
+github.com/chewxy/math32
 # github.com/fogleman/gg v1.2.1-0.20190220221249-0403632d5b90
 github.com/fogleman/gg
 # github.com/go-gota/gota v0.10.1
 ## explicit
 github.com/go-gota/gota/dataframe
 github.com/go-gota/gota/series
+# github.com/gogo/protobuf v1.3.0
+github.com/gogo/protobuf/gogoproto
+github.com/gogo/protobuf/proto
+github.com/gogo/protobuf/protoc-gen-gogo/descriptor
 # github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 github.com/golang/freetype/raster
 github.com/golang/freetype/truetype
+# github.com/golang/protobuf v1.3.2
+github.com/golang/protobuf/proto
 # github.com/gonum/blas v0.0.0-20181208220705-f22b278b28ac
 ## explicit
 github.com/gonum/blas
@@ -42,10 +59,14 @@ github.com/gonum/matrix/mat64
 # github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 ## explicit
 github.com/gonum/stat
+# github.com/google/flatbuffers v1.11.0
+github.com/google/flatbuffers/go
 # github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841
 ## explicit
 # github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5
 github.com/jung-kurt/gofpdf
+# github.com/leesper/go_rng v0.0.0-20171009123644-5344a9259b21
+github.com/leesper/go_rng
 # github.com/lib/pq v1.7.0
 ## explicit
 github.com/lib/pq
@@ -57,10 +78,14 @@ github.com/montanaflynn/stats
 # github.com/patrickmn/go-cache v2.1.0+incompatible
 ## explicit
 github.com/patrickmn/go-cache
+# github.com/pkg/errors v0.9.1
+github.com/pkg/errors
 # github.com/sajari/regression v1.0.1
 ## explicit
 github.com/sajari/regression
-# golang.org/x/image v0.0.0-20180708004352-c73c2afc3b81
+# github.com/xtgo/set v1.0.0
+github.com/xtgo/set
+# golang.org/x/image v0.0.0-20190227222117-0694c2d4d067
 golang.org/x/image/draw
 golang.org/x/image/font
 golang.org/x/image/font/basicfont
@@ -71,7 +96,7 @@ golang.org/x/image/tiff/lzw
 # golang.org/x/net v0.0.0-20200202094626-16171245cfb2
 golang.org/x/net/html
 golang.org/x/net/html/atom
-# golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a
+# golang.org/x/sys v0.0.0-20190312061237-fead79001313
 golang.org/x/sys/unix
 # gonum.org/v1/gonum v0.7.0
 ## explicit
@@ -80,6 +105,13 @@ gonum.org/v1/gonum/blas/blas64
 gonum.org/v1/gonum/blas/cblas128
 gonum.org/v1/gonum/blas/gonum
 gonum.org/v1/gonum/floats
+gonum.org/v1/gonum/graph
+gonum.org/v1/gonum/graph/internal/linear
+gonum.org/v1/gonum/graph/internal/ordered
+gonum.org/v1/gonum/graph/internal/set
+gonum.org/v1/gonum/graph/iterator
+gonum.org/v1/gonum/graph/topo
+gonum.org/v1/gonum/graph/traverse
 gonum.org/v1/gonum/integrate
 gonum.org/v1/gonum/internal/asm/c128
 gonum.org/v1/gonum/internal/asm/c64
@@ -105,3 +137,25 @@ gonum.org/v1/plot/vg/vgeps
 gonum.org/v1/plot/vg/vgimg
 gonum.org/v1/plot/vg/vgpdf
 gonum.org/v1/plot/vg/vgsvg
+# gorgonia.org/cu v0.9.3
+gorgonia.org/cu
+gorgonia.org/cu/blas
+gorgonia.org/cu/dnn
+# gorgonia.org/dawson v1.2.0
+gorgonia.org/dawson
+# gorgonia.org/gorgonia v0.9.12
+## explicit
+gorgonia.org/gorgonia
+gorgonia.org/gorgonia/cuda
+gorgonia.org/gorgonia/internal/encoding
+# gorgonia.org/tensor v0.9.9
+## explicit
+gorgonia.org/tensor
+gorgonia.org/tensor/internal/execution
+gorgonia.org/tensor/internal/serialization/fb
+gorgonia.org/tensor/internal/serialization/pb
+gorgonia.org/tensor/internal/storage
+# gorgonia.org/vecf32 v0.9.0
+gorgonia.org/vecf32
+# gorgonia.org/vecf64 v0.9.0
+gorgonia.org/vecf64

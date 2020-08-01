@@ -20,4 +20,6 @@ require (
 	github.com/sajari/regression v1.0.1
 	gonum.org/v1/gonum v0.7.0
 	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b
+	gorgonia.org/gorgonia v0.9.12
+	gorgonia.org/tensor v0.9.9 // indirect
 )
