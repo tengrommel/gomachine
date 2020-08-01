@@ -46,6 +46,21 @@ func NewAVLTree(data interface{}, myFunc comparator) (*AVLNode, error) {
 	return NewNode(data), nil
 }
 
+func (avlNode *AVLNode) GetAll() []interface{} {
+	values := make([]interface{}, 0)
+	return AddValues(values, avlNode)
+}
+
+func AddValues(values []interface{}, avlNode *AVLNode) []interface{} {
+	if avlNode != nil {
+		values = AddValues(values, avlNode.Left)
+		values = append(values, avlNode.Data)
+		fmt.Println(avlNode.Data, avlNode.height)
+		values = AddValues(values, avlNode.Right)
+	}
+	return values
+}
+
 // 左旋，逆时针
 func (avlNode *AVLNode) LeftRotate() *AVLNode {
 	headNode := avlNode.Right
@@ -184,6 +199,9 @@ func (avlNode *AVLNode) FindMax() *AVLNode {
 
 // 抓取数据
 func (avlNode *AVLNode) GetData() interface{} {
+	if avlNode == nil {
+		return nil
+	}
 	return avlNode.Data
 }
 
@@ -193,13 +211,22 @@ func (avlNode *AVLNode) SetData(data interface{}) {
 }
 
 func (avlNode *AVLNode) GetLeft() *AVLNode {
+	if avlNode == nil {
+		return nil
+	}
 	return avlNode.Left
 }
 
 func (avlNode *AVLNode) GetHeight() int {
+	if avlNode == nil {
+		return 0
+	}
 	return avlNode.height
 }
 
 func (avlNode *AVLNode) GetRight() *AVLNode {
+	if avlNode == nil {
+		return nil
+	}
 	return avlNode.Right
 }
