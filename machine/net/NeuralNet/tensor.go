@@ -79,6 +79,16 @@ func AddFloat64(x Tensor, y Tensor) Tensor {
 	return out
 }
 
+func SubFloat64(x Tensor, y Tensor) Tensor {
+	out := x
+	for i := 0; i < x.Shape[0]; i++ {
+		for j := 0; j < x.Shape[1]; j++ {
+			out.Data[i][j] -= y.Data[i][j]
+		}
+	}
+	return out
+}
+
 // 张量的转置
 func TransposeFloat64(x Tensor) Tensor {
 	out := NewTensor(NewTensorShape(x.Shape[1], x.Shape[0]))
