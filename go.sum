@@ -69,6 +69,12 @@ github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+o
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
+github.com/kuroko1t/GoMNIST v0.0.0-20180718150654-e1740f9385b1 h1:pthAR3PEIIWuTlC2Y9RPQ0UERQIDVtaBWyqgbem5T+c=
+github.com/kuroko1t/GoMNIST v0.0.0-20180718150654-e1740f9385b1/go.mod h1:GDmFr1Sjkf24W5YmOEPRxYtNvQzRtv/EQyIYHd1BzPs=
+github.com/kuroko1t/gdeep v0.0.0-20200208012134-828d188ac9e9 h1:qVkp3PXRWajbr0hYhDKPJRQi6DXO2i6lUBPEsJW6JWk=
+github.com/kuroko1t/gdeep v0.0.0-20200208012134-828d188ac9e9/go.mod h1:SE/ktc6TrrwnIHDS1g/4mK/lnb2hNViuFwDPxwEtMjQ=
+github.com/kuroko1t/gmat v0.0.0-20190825143911-2829ab933b5d h1:/DkP68uig8II/smJQ4oEBUUxGmKsGWDhjujWi1N/7ao=
+github.com/kuroko1t/gmat v0.0.0-20190825143911-2829ab933b5d/go.mod h1:EQCFlCSO9ltbKo0Y5v4vi6CQCHRNrWxiuHAL37Fdko8=
 github.com/leesper/go_rng v0.0.0-20171009123644-5344a9259b21 h1:O75p5GUdUfhJqNCMM1ntthjtJCOHVa1lzMSfh5Qsa0Y=
 github.com/leesper/go_rng v0.0.0-20171009123644-5344a9259b21/go.mod h1:N0SVk0uhy+E1PZ3C9ctsPRlvOPAFPkCNlcPBDkt0N3U=
 github.com/lib/pq v1.7.0 h1:h93mCPfUSkaul3Ka/VG8uZdmW1uMHDGxzu0NWHuJmHY=

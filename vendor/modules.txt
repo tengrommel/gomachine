@@ -65,6 +65,19 @@ github.com/google/flatbuffers/go
 ## explicit
 # github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5
 github.com/jung-kurt/gofpdf
+# github.com/kuroko1t/GoMNIST v0.0.0-20180718150654-e1740f9385b1
+## explicit
+github.com/kuroko1t/GoMNIST
+# github.com/kuroko1t/gdeep v0.0.0-20200208012134-828d188ac9e9
+## explicit
+github.com/kuroko1t/gdeep
+github.com/kuroko1t/gdeep/common
+github.com/kuroko1t/gdeep/layer
+# github.com/kuroko1t/gmat v0.0.0-20190825143911-2829ab933b5d
+## explicit
+github.com/kuroko1t/gmat
+github.com/kuroko1t/gmat/cpu
+github.com/kuroko1t/gmat/gpu
 # github.com/leesper/go_rng v0.0.0-20171009123644-5344a9259b21
 github.com/leesper/go_rng
 # github.com/lib/pq v1.7.0

@@ -14,6 +14,9 @@ require (
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 	github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841 // indirect
+	github.com/kuroko1t/GoMNIST v0.0.0-20180718150654-e1740f9385b1
+	github.com/kuroko1t/gdeep v0.0.0-20200208012134-828d188ac9e9
+	github.com/kuroko1t/gmat v0.0.0-20190825143911-2829ab933b5d // indirect
 	github.com/lib/pq v1.7.0
 	github.com/montanaflynn/stats v0.6.3
 	github.com/patrickmn/go-cache v2.1.0+incompatible
@@ -21,5 +24,5 @@ require (
 	gonum.org/v1/gonum v0.7.0
 	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b
 	gorgonia.org/gorgonia v0.9.12
-	gorgonia.org/tensor v0.9.9 // indirect
+	gorgonia.org/tensor v0.9.9
 )
