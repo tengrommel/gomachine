@@ -9,7 +9,6 @@ import (
 	"os"
 )
 
-// 汇总
 func main() {
 	path := "/home/teng/Documents/git/gomachine/machine/ch2/LinearRegression/Advertising.csv"
 	AdFile, err := os.Open(path)
@@ -18,23 +17,27 @@ func main() {
 	}
 	defer AdFile.Close()
 	ADDF := dataframe.ReadCSV(AdFile)
+	yVals := ADDF.Col("Sales").Float()
 	for _, colName := range ADDF.Names() {
-		plotVals := make(plotter.Values, ADDF.Nrow())
+		plotVals := make(plotter.XYs, ADDF.Nrow())
 		for i, floatVal := range ADDF.Col(colName).Float() {
-			plotVals[i] = floatVal
+			plotVals[i].X = floatVal
+			plotVals[i].Y = yVals[i]
 		}
 		p, err := plot.New()
 		if err != nil {
 			fmt.Println(err)
 		}
-		p.Title.Text = fmt.Sprintf("图的展示字段%s", colName)
-		h, err := plotter.NewHist(plotVals, 16)
+		p.X.Label.Text = colName
+		p.Y.Label.Text = "y"
+		p.Add(plotter.NewGrid())
+		s, err := plotter.NewScatter(plotVals)
 		if err != nil {
 			fmt.Println(err)
 		}
-		h.Normalize(1)
-		p.Add(h)
-		if err := p.Save(4*vg.Inch, 4*vg.Inch, colName+"_hist.png"); err != nil {
+		s.GlyphStyle.Radius = vg.Points(3)
+		p.Add(s)
+		if err := p.Save(4*vg.Inch, 4*vg.Inch, colName+"_scatter.png"); err != nil {
 			fmt.Println(err)
 		}
 	}
