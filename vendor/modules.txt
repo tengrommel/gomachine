@@ -8,6 +8,9 @@ github.com/anaskhan96/soup
 # github.com/boltdb/bolt v1.3.1
 ## explicit
 github.com/boltdb/bolt
+# github.com/fjukstad/met v0.0.0-20180427072128-39c29dc8af79
+## explicit
+github.com/fjukstad/met
 # github.com/fogleman/gg v1.2.1-0.20190220221249-0403632d5b90
 github.com/fogleman/gg
 # github.com/go-gota/gota v0.10.1

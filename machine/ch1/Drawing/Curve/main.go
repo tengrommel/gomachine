@@ -7,6 +7,7 @@ import (
 	"gonum.org/v1/plot/vg"
 )
 
+// 曲线图
 func main() {
 	p, _ := plot.New()
 
@@ -25,5 +26,4 @@ func main() {
 	plotutil.AddLinePoints(p, points)
 
 	p.Save(4*vg.Inch, 4*vg.Inch, "price.png")
-
 }

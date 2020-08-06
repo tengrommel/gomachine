@@ -6,6 +6,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/anaskhan96/soup v1.1.1
 	github.com/boltdb/bolt v1.3.1
+	github.com/fjukstad/met v0.0.0-20180427072128-39c29dc8af79
 	github.com/go-gota/gota v0.10.1
 	github.com/gonum/blas v0.0.0-20181208220705-f22b278b28ac
 	github.com/gonum/floats v0.0.0-20181209220543-c233463c7e82
