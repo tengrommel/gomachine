@@ -1,71 +1,44 @@
 package main
 
 import (
-	"bufio"
-	"github.com/go-gota/gota/dataframe"
+	"encoding/csv"
+	"fmt"
+	"github.com/sajari/regression"
 	"log"
 	"os"
+	"strconv"
 )
 
 func main() {
 	// Open the advertising dataset file.
-	f, err := os.Open("/home/teng/Documents/git/gomachine/machine/ch2/LinearRegression/Advertising.csv")
+	file, err := os.Open("training.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer f.Close()
-
-	// Create a dataframe from the CSV file.
-	// The types of the columns will be inferred.
-	advertDF := dataframe.ReadCSV(f)
-
-	// Calculate the number of elements in each set.
-	trainingNum := (4 * advertDF.Nrow()) / 5
-	testNum := advertDF.Nrow() / 5
-	if trainingNum+testNum < advertDF.Nrow() {
-		trainingNum++
+	defer file.Close()
+	reader := csv.NewReader(file)
+	reader.FieldsPerRecord = 4         // 字段
+	trainData, err := reader.ReadAll() // 读取全部
+	if err != nil {
+		fmt.Println(err)
 	}
-
-	// Create the subset indices.
-	trainingIdx := make([]int, trainingNum)
-	testIdx := make([]int, testNum)
-
-	// Enumerate the training indices.
-	for i := 0; i < trainingNum; i++ {
-		trainingIdx[i] = i
-	}
-
-	// Enumerate the test indices.
-	for i := 0; i < testNum; i++ {
-		testIdx[i] = trainingNum + i
-	}
-
-	// Create the subset dataframes.
-	trainingDF := advertDF.Subset(trainingIdx)
-	testDF := advertDF.Subset(testIdx)
-
-	// Create a map that will be used in writing the data
-	// to files.
-	setMap := map[int]dataframe.DataFrame{
-		0: trainingDF,
-		1: testDF,
-	}
-
-	// Create the respective files.
-	for idx, setName := range []string{"training.csv", "test.csv"} {
-
-		// Save the filtered dataset file.
-		f, err := os.Create(setName)
+	var r regression.Regression // 线性回归对象
+	r.SetObserved("Sales")
+	r.SetVar(0, "TV") // x, y之间的关系
+	for i, record := range trainData {
+		if i == 0 {
+			continue
+		}
+		yVal, err := strconv.ParseFloat(record[3], 64)
 		if err != nil {
-			log.Fatal(err)
+			fmt.Println(err)
 		}
-
-		// Create a buffered writer.
-		w := bufio.NewWriter(f)
-
-		// Write the dataframe out as a CSV.
-		if err := setMap[idx].WriteCSV(w); err != nil {
-			log.Fatal(err)
+		TVVal, err := strconv.ParseFloat(record[0], 64)
+		if err != nil {
+			fmt.Println(err)
 		}
+		r.Train(regression.DataPoint(yVal, []float64{TVVal}))
 	}
+	r.Run()
+	fmt.Println(r.Formula)
 }

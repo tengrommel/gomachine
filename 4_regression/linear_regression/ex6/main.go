@@ -56,7 +56,7 @@ func main() {
 		r.Train(regression.DataPoint(yVal, []float64{tvVal}))
 	}
 
-	// Train/fit the regression model.
+	// Segmentation/fit the regression model.
 	r.Run()
 	// Output the trained model parameters.
 	fmt.Printf("\nRegression Formula:\n%v\n\n", r.Formula)
