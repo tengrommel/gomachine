@@ -25,7 +25,7 @@ require (
 	github.com/montanaflynn/stats v0.6.3
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/sajari/regression v1.0.1
-	github.com/sjwhitworth/golearn v0.0.0-20200725172519-a6614fa9f542 // indirect
+	github.com/sjwhitworth/golearn v0.0.0-20200806161737-c39ef5156bdf
 	github.com/zhenghaoz/gorse v0.1.3 // indirect
 	gonum.org/v1/gonum v0.7.0
 	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b
