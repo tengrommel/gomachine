@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"fmt"
+	"github.com/berkmancenter/ridge"
 	"github.com/gonum/matrix/mat64"
 	"os"
 	"strconv"
@@ -51,6 +52,13 @@ func main() {
 	}
 	features := mat64.NewDense(len(trainData), 4, featureData) // 创建矩阵
 	y := mat64.NewVector(len(trainData), yData)                // 创建向量
-	fmt.Println(features)
-	fmt.Println(y)
+	//fmt.Println(features)
+	//fmt.Println(y)
+	r := ridge.New(features, y, 1.0)
+	r.Regress() // 逻辑回归
+	c1 := r.Coefficients.At(0, 0)
+	c2 := r.Coefficients.At(1, 0)
+	c3 := r.Coefficients.At(2, 0)
+	c4 := r.Coefficients.At(3, 0)
+	fmt.Printf("y=%f+%fTV+%fRadio+%fNewspaper\n", c1, c2, c3, c4)
 }

@@ -5,6 +5,9 @@ github.com/ajstarks/svgo
 # github.com/anaskhan96/soup v1.1.1
 ## explicit
 github.com/anaskhan96/soup
+# github.com/berkmancenter/ridge v0.0.0-20160817211126-84766bc56b56
+## explicit
+github.com/berkmancenter/ridge
 # github.com/boltdb/bolt v1.3.1
 ## explicit
 github.com/boltdb/bolt

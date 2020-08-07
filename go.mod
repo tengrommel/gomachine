@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/anaskhan96/soup v1.1.1
+	github.com/berkmancenter/ridge v0.0.0-20160817211126-84766bc56b56
 	github.com/boltdb/bolt v1.3.1
 	github.com/fjukstad/met v0.0.0-20180427072128-39c29dc8af79
 	github.com/go-gota/gota v0.10.1
