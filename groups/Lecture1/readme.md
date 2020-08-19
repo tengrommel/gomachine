@@ -24,3 +24,11 @@ lab 4 - sharded K/V service
 - 存储
 - 计算
 - 通信
+
+Performance
+- Scalability 2 * computer ---> 2 * throughput
+
+Topic - consistency
+
+- Put(k, v)
+- Get(k)
