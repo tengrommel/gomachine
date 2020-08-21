@@ -85,6 +85,7 @@ func (rbt *RBTree) search(x *RBNode) *RBNode {
 	return pNode
 }
 
+// 左旋
 func (rbt *RBTree) leftRotate(x *RBNode) {
 	if x.Right == rbt.NIL {
 		return // 左旋转,逆时针,右孩子不可以为0
@@ -92,7 +93,7 @@ func (rbt *RBTree) leftRotate(x *RBNode) {
 	y := x.Right
 	x.Right = y.Left // 实现旋转的左旋
 	if y.Left != rbt.NIL {
-		y.Left.Parent = x // 设置父亲节点
+		y.Left.Parent = x // 指向父亲节点
 	}
 	y.Parent = x.Parent // 交换父节点
 	if x.Parent == rbt.NIL {
@@ -139,7 +140,7 @@ func (rbt *RBTree) insert(z *RBNode) *RBNode {
 			x = x.Left
 		} else if less(x.Item, z.Item) { // 大于
 			x = x.Right
-		} else {
+		} else { // 相等
 			return x // 数据已经存在,无法插入
 		}
 	}
@@ -156,7 +157,48 @@ func (rbt *RBTree) insert(z *RBNode) *RBNode {
 	return z
 }
 
-// 插入后调整平衡
+// 插入后，调整平衡
 func (rbt *RBTree) insertFixup(z *RBNode) {
+	if z.Parent.Color == RED {
+		// 一直循环下去，直到根结点
+		if z.Parent == z.Parent.Parent.Left {
+			// 父亲结点在爷爷左边
+			y := z.Parent.Parent.Right
+			if y.Color == RED {
+				z.Parent.Color = BLACK
+				y.Color = BLACK
+				z.Parent.Parent.Color = RED
+				z = z.Parent.Parent
 
+			} else {
+				if z == z.Parent.Right { // z比父亲小
+					z = z.Parent
+					rbt.leftRotate(z) // 左旋
+				} else { // z比父亲大
+					z.Parent.Color = BLACK
+					z.Parent.Parent.Color = RED
+					rbt.rightRotate(z.Parent.Parent)
+				}
+			}
+		} else {
+			// 父亲结点在爷爷右边
+			y := z.Parent.Parent.Left
+			if y.Color == RED {
+				z.Parent.Color = BLACK
+				y.Color = BLACK
+				z.Parent.Parent.Color = RED
+				z = z.Parent.Parent
+			} else {
+				if z == z.Parent.Left {
+					z = z.Parent
+					rbt.rightRotate(z)
+				} else {
+					z.Parent.Color = BLACK
+					z.Parent.Parent.Color = RED
+					rbt.rightRotate(z.Parent.Parent)
+				}
+			}
+		}
+	}
+	rbt.Root.Color = BLACK
 }
