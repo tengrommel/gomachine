@@ -159,43 +159,44 @@ func (rbt *RBTree) insert(z *RBNode) *RBNode {
 
 // 插入后，调整平衡
 func (rbt *RBTree) insertFixup(z *RBNode) {
-	if z.Parent.Color == RED {
-		// 一直循环下去，直到根结点
-		if z.Parent == z.Parent.Parent.Left {
-			// 父亲结点在爷爷左边
-			y := z.Parent.Parent.Right
-			if y.Color == RED {
-				z.Parent.Color = BLACK
-				y.Color = BLACK
-				z.Parent.Parent.Color = RED
-				z = z.Parent.Parent
-
-			} else {
-				if z == z.Parent.Right { // z比父亲小
-					z = z.Parent
-					rbt.leftRotate(z) // 左旋
-				} else { // z比父亲大
+	for z.Parent.Color == RED { // 一直循环下去，直到根节点
+		if z.Parent.Color == RED {
+			// 一直循环下去，直到根结点
+			if z.Parent == z.Parent.Parent.Left {
+				// 父亲结点在爷爷左边
+				y := z.Parent.Parent.Right
+				if y.Color == RED { // 判断父亲的兄弟节点是否为红色
 					z.Parent.Color = BLACK
+					y.Color = BLACK
 					z.Parent.Parent.Color = RED
-					rbt.rightRotate(z.Parent.Parent)
-				}
-			}
-		} else {
-			// 父亲结点在爷爷右边
-			y := z.Parent.Parent.Left
-			if y.Color == RED {
-				z.Parent.Color = BLACK
-				y.Color = BLACK
-				z.Parent.Parent.Color = RED
-				z = z.Parent.Parent
-			} else {
-				if z == z.Parent.Left {
-					z = z.Parent
-					rbt.rightRotate(z)
+					z = z.Parent.Parent
 				} else {
+					if z == z.Parent.Right { // z比父亲小
+						z = z.Parent
+						rbt.leftRotate(z) // 左旋
+					} else { // z比父亲大
+						z.Parent.Color = BLACK
+						z.Parent.Parent.Color = RED
+						rbt.rightRotate(z.Parent.Parent)
+					}
+				}
+			} else {
+				// 父亲结点在爷爷右边
+				y := z.Parent.Parent.Left
+				if y.Color == RED {
 					z.Parent.Color = BLACK
+					y.Color = BLACK
 					z.Parent.Parent.Color = RED
-					rbt.rightRotate(z.Parent.Parent)
+					z = z.Parent.Parent
+				} else {
+					if z == z.Parent.Left {
+						z = z.Parent
+						rbt.rightRotate(z)
+					} else {
+						z.Parent.Color = BLACK
+						z.Parent.Parent.Color = RED
+						rbt.rightRotate(z.Parent.Parent)
+					}
 				}
 			}
 		}
