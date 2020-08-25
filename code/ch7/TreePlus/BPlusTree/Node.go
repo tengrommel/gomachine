@@ -11,8 +11,8 @@ const (
 // 接口设计
 type node interface {
 	find(key int) (int, bool) // 查找key
-	parent() *interiorNode    // 返回父亲节点
-	setParent(*interiorNode)  // 设置父亲节点
+	Parent() *interiorNode    // 返回父亲节点
+	SetParent(*interiorNode)  // 设置父亲节点
 	full() bool               // 判断是否满了
-	countNum() int            // 统计元素的数量
+	CountNum() int            // 统计元素的数量
 }
