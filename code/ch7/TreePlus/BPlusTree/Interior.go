@@ -90,13 +90,13 @@ func (in *interiorNode) insert(key int, child node) (int, *interiorNode, bool) {
 		// 设置子节点分裂以后的元素，设置key
 		in.kcs[i].key = key
 		in.kcs[i].child = child
-		child.setParent(in)
+		child.SetParent(in)
 		in.count++
 		return 0, nil, false
 	} else {
 		in.kcs[MaxKC].key = key
 		in.kcs[MaxKC].child = child // 存储到最后
-		child.setParent(in)         // 设置父亲节点
+		child.SetParent(in)         // 设置父亲节点
 		next, midKey := in.split()  // 切割
 		return midKey, next, true   // 返回中间节点
 	}
@@ -117,11 +117,11 @@ func (in *interiorNode) split() (*interiorNode, int) {
 	in.InitArray(midIndex + 1)              // 数据初始化
 	next.count = MaxKC - midIndex           // 下一个节点的数量
 	for i := 0; i < next.count; i++ {
-		next.kcs[i].child.setParent(next)
+		next.kcs[i].child.SetParent(next)
 	}
 	in.count = midIndex + 1
 	in.kcs[in.count-1].key = 0
 	in.kcs[in.count-1].child = midChild
-	midChild.setParent(in)
+	midChild.SetParent(in)
 	return next, midKey
 }
