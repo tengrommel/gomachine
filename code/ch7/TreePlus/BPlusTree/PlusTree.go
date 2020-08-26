@@ -48,10 +48,6 @@ func (bpt *BPlusTree) Values() []*LeafNode {
 	return nodes
 }
 
-func (bpt *BPlusTree) Insert(key int, value string) {
-
-}
-
 // 查找数据
 func (bpt *BPlusTree) Search(key int) (string, bool) {
 	kv, _, _ := search((*bpt)[-1], key) // 查找
@@ -83,4 +79,53 @@ func search(n node, key int) (*kv, int, *LeafNode) {
 			panic("异常节点")
 		}
 	}
+}
+
+// 1	6
+// 123456789
+func (bpt *BPlusTree) Insert(key int, value string) {
+	_, oldIndex, leaf := search((*bpt)[-1], key)
+	p := leaf.Parent() // 保存父亲节点
+	// 插入叶子节点，判断是否分裂
+	mid, nextLeaf, bump := leaf.insert(key, value)
+	if !bump { // 没有分谢
+		return
+	}
+	// f分裂的节点插入B+树
+	(*bpt)[mid] = nextLeaf
+	var midNode node
+	midNode = leaf.next                  // 设置父亲节点
+	leaf.next.SetParent(p)               // 分裂的节点设置父亲节点
+	interior, interiorP := p, p.Parent() // 获取中间点解，父亲节点
+	//平衡过程，迭代向上判断，是否需要平衡
+	for {
+		var newInterior *interiorNode // 新的节点
+		// 判断是否到达根节点
+		isRoot := interiorP == nil
+		if !isRoot {
+			oldIndex, _ = interiorP.find(key) // 查找
+		}
+		// 叶子节点分裂后的中间节点传入父亲的中间节点，传入分裂
+		mid, newInterior, bump = interior.insert(mid, midNode)
+		if !bump {
+			return
+		}
+		(*bpt)[newInterior.kcs[0].key] = newInterior // 插入并填充好了map
+		if !isRoot {
+			interiorP.kcs[oldIndex].child = newInterior // 没有到根节点，直接插入父亲节点
+			newInterior.SetParent(interiorP)
+			midNode = interior
+		} else {
+			// 更新节点
+			(*bpt)[interior.kcs[0].key] = (*bpt)[-1]       // 备份下根节点
+			(*bpt)[-1] = NewInteriorNode(nil, newInterior) // 根节点插入新的根节点
+			node := (*bpt)[-1].(*interiorNode)
+			node.insert(mid, interior) // 重新插入
+			(*bpt)[-1] = node
+			newInterior.SetParent(node)
+		}
+		interior, interiorP = interiorP, interiorP.Parent()
+
+	}
+
 }
