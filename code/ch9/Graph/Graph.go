@@ -26,7 +26,7 @@ type Graph interface {
 	AllEdges() []Edge           // 返回所有的边长
 
 	AllConnectedVertices(interface{}) []interface{} // 返回所有的联通的顶点
-	IterConnectedEdges(interface{}) []Edge          // 返回所有的联通的边长
+	IterConnectedEdges(interface{}) iterator        // 返回所有的联通的边长
 	Transpose() Graph                               // 返回旋转图
 }
 
@@ -130,9 +130,9 @@ func (g *AdjacencyMatrix) AllConnectedVertices(v interface{}) []interface{} {
 	return keys
 }
 
-func (g *AdjacencyMatrix) IterConnectedEdges(v interface{}) []Edge {
+func (g *AdjacencyMatrix) IterConnectedEdges(v interface{}) iterator {
 	if g.matrix.exist(v) {
-		return nil // 循环工具
+		return NewLinkedMapIterator(g.matrix.get(v).(*LinkedMap))
 	} else {
 		return nil
 	}
