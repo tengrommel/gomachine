@@ -14,11 +14,11 @@ type AdjacencyMatrixWithWeight struct {
 	totalWeight int
 }
 
-func NewAdjacencyMatrixWithWeight() *AdjacencyMatrixWithWeight {
+func NewAdjacencyMatrixWithWeight() WeightGraph {
 	return new(AdjacencyMatrixWithWeight).Init()
 }
 
-func (g *AdjacencyMatrixWithWeight) Init() *AdjacencyMatrixWithWeight {
+func (g *AdjacencyMatrixWithWeight) Init() WeightGraph {
 	g.AdjacencyMatrix.init()       // 初始化图
 	g.weights = make(map[Edge]int) // 权重
 	g.totalWeight = 0              // 总重量
