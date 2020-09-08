@@ -60,3 +60,24 @@ The process visiting all nodes of a tree is called tree traversal. Each node is 
 Traversal Possibilities
 
 Starting at the root of a binary tree, there are three main steps that can be performed and the order in which they are performed defines the traversal type.
+
+These steps are: performing an action on the current node(referred to as "visiting" the node and denoted with "D"), traversing to the left child node(denoted with "L"), and traversing to the right child node (denoted with "R"). This process can be easily described through recursion.
+
+Based on the above definition there are 6 possibilities:
+
+- 1、LDR: Process left subtree, process the current node data and then process right subtree
+- 2、LRD: Process left subtree, process right subtree and then process the current node data
+- 3、DLR: Process the current node data, process left subtree and then process right subtree
+- 4、DRL: Process the current node data, process right subtree and then process left subtree
+- 5、RDL: Process right subtree, process the current node data and then process left subtree
+- 6、RLD: Process right subtree, process left subtree and then process the current node data
+
+# Classifying the Traversals
+
+- PreOrder(DLR) Traversal
+- InOrder(LDR) Traversal
+- PostOrder(LRD) Traversal
+
+There is another traversal method which does not depend on the above orders and it is:
+> Level Order Traversal: This method is inspired from Breadth First Traversal(BFS of Graph algorithms).
+
