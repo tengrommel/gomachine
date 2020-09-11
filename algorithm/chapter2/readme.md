@@ -82,5 +82,8 @@ There is another traversal method which does not depend on the above orders and 
 > Level Order Traversal: This method is inspired from Breadth First Traversal(BFS of Graph algorithms).
 
 # Non-Recursive PreOrder Traversal
-> In the recursive version, a stack is required as we need to remember the current node so that after completing the left subtree we can go to the right subtree. To simulate the same, first we process the current node and before going to the left subtree, we store the current node on stack. 
+> In the recursive version, a stack is required as we need to remember the current node so that after completing the left subtree we can go to the right subtree. To simulate the same, first we process the current node and before going to the left subtree, we store the current node on stack. After completing the left subtree processing, pop the element and go to its right subtree. Continue this process until stack is nonempty.
+
+
+
 
