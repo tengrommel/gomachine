@@ -30,6 +30,7 @@ func PreOrderWalk(root *BinaryTreeNode, ch chan int) {
 	PreOrderWalk(root.right, ch)
 }
 
+// PreOrderWalker launches Walk in a new goroutine, and returns a read-only of values.
 func PreOrderWalker(root *BinaryTreeNode) <-chan int {
 	ch := make(chan int)
 	go func() {
