@@ -8,6 +8,7 @@ require (
 	github.com/berkmancenter/ridge v0.0.0-20160817211126-84766bc56b56
 	github.com/boltdb/bolt v1.3.1
 	github.com/fjukstad/met v0.0.0-20180427072128-39c29dc8af79
+	github.com/gin-gonic/gin v1.6.3
 	github.com/go-gota/gota v0.10.1
 	github.com/gonum/blas v0.0.0-20181208220705-f22b278b28ac
 	github.com/gonum/floats v0.0.0-20181209220543-c233463c7e82
