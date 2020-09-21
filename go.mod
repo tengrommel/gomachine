@@ -7,9 +7,11 @@ require (
 	github.com/anaskhan96/soup v1.1.1
 	github.com/berkmancenter/ridge v0.0.0-20160817211126-84766bc56b56
 	github.com/boltdb/bolt v1.3.1
+	github.com/chewxy/lingo v0.0.0-20200918122423-491e816b48d4
 	github.com/fjukstad/met v0.0.0-20180427072128-39c29dc8af79
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-gota/gota v0.10.1
+	github.com/go-nlp/tfidf v1.1.0
 	github.com/gonum/blas v0.0.0-20181208220705-f22b278b28ac
 	github.com/gonum/floats v0.0.0-20181209220543-c233463c7e82
 	github.com/gonum/internal v0.0.0-20181124074243-f884aa714029 // indirect
@@ -31,5 +33,4 @@ require (
 	gonum.org/v1/gonum v0.7.0
 	gonum.org/v1/plot v0.0.0-20190515093506-e2840ee46a6b
 	gorgonia.org/gorgonia v0.9.12 // indirect
-	gorgonia.org/tensor v0.9.9 // indirect
 )

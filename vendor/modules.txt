@@ -5,12 +5,38 @@ github.com/ajstarks/svgo
 # github.com/anaskhan96/soup v1.1.1
 ## explicit
 github.com/anaskhan96/soup
+# github.com/apache/arrow/go/arrow v0.0.0-20200909005831-30143fc493df
+github.com/apache/arrow/go/arrow
+github.com/apache/arrow/go/arrow/array
+github.com/apache/arrow/go/arrow/bitutil
+github.com/apache/arrow/go/arrow/decimal128
+github.com/apache/arrow/go/arrow/float16
+github.com/apache/arrow/go/arrow/internal/cpu
+github.com/apache/arrow/go/arrow/internal/debug
+github.com/apache/arrow/go/arrow/memory
+github.com/apache/arrow/go/arrow/tensor
+# github.com/awalterschulze/gographviz v0.0.0-20190221210632-1e9ccb565bca
+github.com/awalterschulze/gographviz
+github.com/awalterschulze/gographviz/ast
+github.com/awalterschulze/gographviz/internal/errors
+github.com/awalterschulze/gographviz/internal/lexer
+github.com/awalterschulze/gographviz/internal/parser
+github.com/awalterschulze/gographviz/internal/token
 # github.com/berkmancenter/ridge v0.0.0-20160817211126-84766bc56b56
 ## explicit
 github.com/berkmancenter/ridge
 # github.com/boltdb/bolt v1.3.1
 ## explicit
 github.com/boltdb/bolt
+# github.com/chewxy/hm v1.0.0
+github.com/chewxy/hm
+# github.com/chewxy/lingo v0.0.0-20200918122423-491e816b48d4
+## explicit
+github.com/chewxy/lingo
+github.com/chewxy/lingo/corpus
+github.com/chewxy/lingo/treebank
+# github.com/chewxy/math32 v1.0.6
+github.com/chewxy/math32
 # github.com/fjukstad/met v0.0.0-20180427072128-39c29dc8af79
 ## explicit
 github.com/fjukstad/met
@@ -29,6 +55,9 @@ github.com/gin-gonic/gin/render
 ## explicit
 github.com/go-gota/gota/dataframe
 github.com/go-gota/gota/series
+# github.com/go-nlp/tfidf v1.1.0
+## explicit
+github.com/go-nlp/tfidf
 # github.com/go-playground/locales v0.13.0
 github.com/go-playground/locales
 github.com/go-playground/locales/currency
@@ -36,6 +65,10 @@ github.com/go-playground/locales/currency
 github.com/go-playground/universal-translator
 # github.com/go-playground/validator/v10 v10.2.0
 github.com/go-playground/validator/v10
+# github.com/gogo/protobuf v1.3.0
+github.com/gogo/protobuf/gogoproto
+github.com/gogo/protobuf/proto
+github.com/gogo/protobuf/protoc-gen-gogo/descriptor
 # github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 github.com/golang/freetype/raster
 github.com/golang/freetype/truetype
@@ -73,6 +106,8 @@ github.com/gonum/matrix/mat64
 ## explicit
 github.com/gonum/stat
 github.com/gonum/stat/distuv
+# github.com/google/flatbuffers v1.11.0
+github.com/google/flatbuffers/go
 # github.com/jpillora/scraper v0.0.0-20190930150335-f06f890eb841
 ## explicit
 # github.com/json-iterator/go v1.1.10
@@ -105,6 +140,8 @@ github.com/montanaflynn/stats
 # github.com/patrickmn/go-cache v2.1.0+incompatible
 ## explicit
 github.com/patrickmn/go-cache
+# github.com/pkg/errors v0.9.1
+github.com/pkg/errors
 # github.com/sajari/regression v1.0.1
 ## explicit
 github.com/sajari/regression
@@ -121,6 +158,8 @@ github.com/sjwhitworth/golearn/trees
 github.com/sjwhitworth/golearn/utilities
 # github.com/ugorji/go/codec v1.1.7
 github.com/ugorji/go/codec
+# github.com/xtgo/set v1.0.0
+github.com/xtgo/set
 # github.com/zhenghaoz/gorse v0.1.3
 ## explicit
 # golang.org/x/image v0.0.0-20190227222117-0694c2d4d067
@@ -136,6 +175,9 @@ golang.org/x/net/html
 golang.org/x/net/html/atom
 # golang.org/x/sys v0.0.0-20200116001909-b77594299b42
 golang.org/x/sys/unix
+# golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543
+golang.org/x/xerrors
+golang.org/x/xerrors/internal
 # gonum.org/v1/gonum v0.7.0
 ## explicit
 gonum.org/v1/gonum/blas
@@ -173,5 +215,13 @@ gonum.org/v1/plot/vg/vgsvg
 gopkg.in/yaml.v2
 # gorgonia.org/gorgonia v0.9.12
 ## explicit
-# gorgonia.org/tensor v0.9.9
-## explicit
+# gorgonia.org/tensor v0.9.11
+gorgonia.org/tensor
+gorgonia.org/tensor/internal/execution
+gorgonia.org/tensor/internal/serialization/fb
+gorgonia.org/tensor/internal/serialization/pb
+gorgonia.org/tensor/internal/storage
+# gorgonia.org/vecf32 v0.9.0
+gorgonia.org/vecf32
+# gorgonia.org/vecf64 v0.9.0
+gorgonia.org/vecf64
